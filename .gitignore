@@ -1,0 +1,6 @@
+.mvn
+.bin
+target
+.project
+.classpath
+.settings 
