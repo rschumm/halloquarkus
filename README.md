@@ -1,9 +1,19 @@
 Minimales Beispiel für eine [Quarkus](https://quarkus.io/) - Applikation in OpenShift:
 (läuft auf jedem OpenShift Cluster)
 
-# WIP
+# WIP (Work in Progress)
 
-based on the example in [Quarkus Getting Started Guide](https://quarkus.io/guides/getting-started-guide)
+based on the example in [Quarkus Getting Started Guide](https://quarkus.io/guides/getting-started-guide).   
+featured in [Rémy blod ingénieur](https://www.schumm.ch/blog.html)   
+
+planned features: 
+- proper templating 
+- peristence with [Hibernate](https://quarkus.io/guides/hibernate-orm-guide) or [Hibernate light panaché](https://quarkus.io/guides/hibernate-orm-panache-guide)
+- Database migrations with [flyway](https://quarkus.io/guides/flyway-guide)  
+- some reactive stuff
+
+
+
 
 
 # setup 
