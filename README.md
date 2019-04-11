@@ -4,12 +4,13 @@ Minimales Beispiel für eine [Quarkus](https://quarkus.io/) - Applikation in Ope
 # WIP (Work in Progress)
 
 based on the example in [Quarkus Getting Started Guide](https://quarkus.io/guides/getting-started-guide).   
-featured in [Rémy blod ingénieur](https://www.schumm.ch/blog.html)   
+featured in [Rémy blog ingénieur](https://www.schumm.ch/blog.html)   
 
 planned features: 
 - proper templating 
 - peristence with [Hibernate](https://quarkus.io/guides/hibernate-orm-guide) or [Hibernate light panaché](https://quarkus.io/guides/hibernate-orm-panache-guide)
 - Database migrations with [flyway](https://quarkus.io/guides/flyway-guide)  
+- Integrate the [Kafka Example](https://quarkus.io/guides/kafka-guide), if possible with [Strimzi](https://strimzi.io/). 
 - some reactive stuff
 
 
