@@ -149,6 +149,16 @@ nb: to override the config values in `application.properties` just set a Environ
 
 if a Java System Property is needed, use -Dquarkus.datasource.url..., if a Unix Env is needed, use export QUARKUS_DATASOURCE_URL=... respectively.
 
+## build native application with s2i locally
+
+run the builder image, mount the local source directory and run maven: 
+
+    docker run -it  --entrypoint /bin/bash --rm -v /home/rschumm/git/halloquarkus:/project quay.io/quarkus/centos-quarkus-maven:19.0.2
+    mvn clean verify -Pnative -DskipTests 
+
+Documentation for the different builder images can be found on [GitHub here](https://github.com/quarkusio/quarkus-images).  
+
+
 
 # Kafka Stuff locally
 
