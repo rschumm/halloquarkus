@@ -1,4 +1,3 @@
-
   
   @media (min-width: 768px) {
     html {
@@ -7,6 +6,8 @@
   }
 
   body {
+    /* background-color: #0739ed;  */
+    /* background-color: #1b3aed; */
     background: linear-gradient(to right, #A177FF, #42a1Ff 30%); 
     color: white; 
     font-family: "Rubik",Helvetica,Arial;
@@ -46,3 +47,14 @@
   .card-header h4 {
       background-color: white
   }
+
+
+
+@keyframes fade-in {
+    0%   {background-color:rgba(255, 0, 0, 1); box-shadow: 20px 20px 20px #333;transform: rotate(2deg)}
+    100% {}
+}
+
+.newmessage {
+	animation: fade-in 2s;
+}

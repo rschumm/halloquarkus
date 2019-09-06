@@ -19,6 +19,9 @@ import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.panache.common.Page;
 import io.quarkus.panache.common.Sort;
 
+import org.reactivestreams.Publisher;
+import io.smallrye.reactive.messaging.annotations.Stream;
+
 
 @Path("/hallo")
 public class HalloResource {
@@ -65,6 +68,19 @@ public class HalloResource {
 
         //return Message.listAll(Sort.by("id").descending()); 
     }
+
+
+    @Inject
+    @Stream("nachricht-bearbeitet") Publisher<String> nachricht; 
+
+
+    @GET
+    @Path("/stream")
+    @Produces(MediaType.SERVER_SENT_EVENTS)             
+    public Publisher<String> stream() {                 
+        return nachricht;
+    }
+
 
 
 
