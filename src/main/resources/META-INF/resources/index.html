@@ -1,152 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>halloquarkus - 1.0-SNAPSHOT</title>
-    <style>
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-            line-height: 1.5;
-        }
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  
+  <title>QUARKUS Hallo Welt</title>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-        h1 {
-            font-size: 2.5rem;
-        }
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
-        h2 {
-            font-size: 2rem
-        }
 
-        h3 {
-            font-size: 1.75rem
-        }
+  
 
-        h4 {
-            font-size: 1.5rem
-        }
 
-        h5 {
-            font-size: 1.25rem
-        }
 
-        h6 {
-            font-size: 1rem
-        }
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 
-        .lead {
-            font-weight: 300;
-            font-size: 2rem;
-        }
 
-        .banner {
-            font-size: 2.7rem;
-            margin: 0;
-            padding: 2rem 1rem;
-            background-color: #00A1E2;
-            color: white;
-        }
 
-        body {
-            margin: 0;
-            font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        }
 
-        code {
-            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 87.5%;
-            color: #e83e8c;
-            word-break: break-word;
-        }
 
-        .left-column {
-            padding: .75rem;
-            max-width: 75%;
-            min-width: 55%;
-        }
+  <script src="https://intercoolerjs.org/release/intercooler-1.2.2.js"></script>
 
-        .right-column {
-            padding: .75rem;
-            max-width: 25%;
-        }
+  
 
-        .container {
-            display: flex;
-            width: 100%;
-        }
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
 
-        li {
-            margin: 0.75rem;
-        }
 
-        .right-section {
-            margin-left: 1rem;
-            padding-left: 0.5rem;
-        }
 
-        .right-section h3 {
-            padding-top: 0;
-            font-weight: 200;
-        }
 
-        .right-section ul {
-            border-left: 0.3rem solid #00A1E2;
-            list-style-type: none;
-            padding-left: 0;
-        }
 
-    </style>
+
 </head>
+
 <body>
 
-<div class="banner lead">
-    Your new Cloud-Native application is ready!
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://www.schumm.ch/favicon.ico"  height="25" alt="Schumm">
+  </a>
+  <div>
+    <a class="navbar-brand" href="https://quarkus.io">
+        <img src="https://quarkus.io/assets/images/quarkus_logo_horizontal_rgb_reverse.svg"  height="30" alt="QUARKUS">
+    </a>
+    <a class="navbar-brand" href="https://www.postgresql.org/">
+      <img src="https://www.postgresql.org/media/img/about/press/elephant.png"  height="30" alt="PostgreSQL">
+    </a>
+  </div>
+</nav>
+
+
+<div  id="app" class="container">
+
+
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Rémy QUARKUS Java Demo App</h1>
+      <p class="lead">Demo Application for different Aspects of Quarkus interesting to me. </p>
 </div>
 
-<div class="container">
-    <div class="left-column">
-        <p class="lead"> Congratulations, you have created a new Quarkus application.</p>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">  
+    <h3 class="display-4 text-center" id="nachricht">-</h3>
+    <p class="lead">Value from REST Service </p>
+    <form>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Nachricht an mich" aria-label="Input group example" aria-describedby="btnGroupAddon" name="textinput">
+      <button type="submit" class="btn btn-primary btn-default" ic-post-to="/hallo/sali" ic-target="#nachricht" ic-on-success="load();">
+        Click Me!
+      </button>
+    </div>
+    </form>
+</div>
 
-        <h2>Why do you see this?</h2>
 
-        <p>This page is served by Quarkus. The source is in
-            <code>src/main/resources/META-INF/resources/index.html</code>.</p>
 
-        <h2>What can I do from here?</h2>
 
-        <p>If not already done, run the application in <em>dev mode</em> using: <code>mvn compile quarkus:dev</code>.
-        </p>
-        <ul>
-            <li>Add REST resources, Servlets, functions and other services in <code>src/main/java</code>.</li>
-            <li>Your static assets are located in <code>src/main/resources/META-INF/resources</code>.</li>
-            <li>Configure your application in <code>src/main/resources/application.properties</code>.
-            </li>
+
+<div class="table-responsive">
+
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nachricht</th>
+      </tr>
+    </thead>
+    <tbody  id="nt">
+
+    </tbody>
+  </table>
+
+
+</div>
+
+
+
+
+
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">QUARKUS</h4>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title pricing-card-title">Supersonic Subatomic Java</h2>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><q>QUARKUS used as Demo Case for Cloud Native Applications</q></li>
+          <li>REST-ful Backend</li>
+          <li>PostgreSQL Database with Hibernate ORM</li>
+          <li>Bootstrap HTML Frontend</li>
         </ul>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">PostgreSQL</h4>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title pricing-card-title">Panaché ORM</h2>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Data is backed by my favourite Database, the most advanced OpenSourceDatabase of the world... </li>
+            </ul>
+          </div>
+       
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">OpenShift</h4>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title pricing-card-title">deployed on OpenShift</h2>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>This Application is built as Cloud Native binary by source-to-image, </li>
+          <li>deployed and operated by OpenShift. </li>
+        </ul>
+      </div>
+    </div>
 
-        <h2>How do I get rid of this page?</h2>
-        <p>Just delete the <code>src/main/resources/META-INF/resources/index.html</code> file.</p>
-    </div>
-    <div class="right-column">
-        <div class="right-section">
-            <h3>Application</h3>
-            <ul>
-                <li>GroupId: ch.schumm</li>
-                <li>ArtifactId: halloquarkus</li>
-                <li>Version: 1.0-SNAPSHOT</li>
-                <li>Quarkus Version: 0.12.0</li>
-            </ul>
-        </div>
-        <div class="right-section">
-            <h3>Next steps</h3>
-            <ul>
-                <li><a href="https://quarkus.io/guides/maven-tooling.html">Setup your IDE</a></li>
-                <li><a href="https://quarkus.io/guides/getting-started-guide.html">Getting started</a></li>
-                <li><a href="https://quarkus.io">Quarkus Web Site</a></li>
-            </ul>
-        </div>
-    </div>
+
+    
+
+
+
+  </div>	
+
+
+
+
+	<address class="mt-3" >
+    <small>
+      <p>
+        <span class="glyphicon glyphicon-info-sign"></span> Prototyp für QUARKUS Applikation auf OpenShift and Virtual Machines. 
+      </p>		
+      <p>Rémy Schumm, 2019  - hergestellt in der Schweiz </p> 
+      
+      <small>
+        Powered by <a href="https://quarkus.io/">QUARKUS Supersonic Subatomic Java </a> 
+      </small>
+      
+    </small>
+  </address>
 </div>
+
+
+
+<script>
+
+function load(){
+  $.ajax({
+    url: '/hallo/logbuch',
+    type: 'GET',
+    success: function (response) {
+        var trHTML = '';
+        $.each(response, function (i, item) {
+            trHTML += '<tr><th scope="row">' + item.id + '</th><td>' + item.text + '</td></tr>';
+        });
+        $('#nt').empty();
+        $('#nt').append(trHTML);
+    }
+  });
+}
+
+load(); 
+
+</script>
 
 
 </body>
+
 </html>

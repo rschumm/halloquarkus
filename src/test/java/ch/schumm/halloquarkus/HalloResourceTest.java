@@ -26,7 +26,7 @@ public class HalloResourceTest {
           .when().get("/hallo/sali/Yvonne")
           .then()
              .statusCode(200)
-             .body(is("Hoi, Yvonne"));
+             .body(is("neuste Nachricht: Yvonne"));
     }
 
 }

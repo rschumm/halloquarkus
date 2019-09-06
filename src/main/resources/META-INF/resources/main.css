@@ -1,0 +1,48 @@
+
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  body {
+    background: linear-gradient(to right, #A177FF, #42a1Ff 30%); 
+    color: white; 
+    font-family: "Rubik",Helvetica,Arial;
+  }
+  
+  a {
+  	font-weight: bold; 
+  	color: inherit; 
+  }
+  
+  a:hover {
+  	color: inherit;
+  }
+  
+  h1 {
+    /* font-family: "ReplicaBold",Helvetica,Arial; */
+    font-weight: bold; 
+  }
+  
+  .container {
+    max-width: 960px;
+  }
+  
+  .pricing-header {
+    max-width: 700px;
+  }
+  
+  .card-deck .card {
+    min-width: 220px;
+    color: black; 
+  }
+
+  .card-header {
+    background: url(diagonal.png);
+  }
+
+  .card-header h4 {
+      background-color: white
+  }

@@ -6,7 +6,7 @@ import javax.enterprise.context.ApplicationScoped;
 public class HalloService {
 
     public String sagHallo(String name) {
-        return "Hoi, " + name;
+        return "neuste Nachricht: " + name;
     }
 
 }
