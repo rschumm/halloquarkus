@@ -4,5 +4,6 @@ target
 .project
 .classpath
 .settings 
-.vscode
 quarkus.log
+.vscode
+
